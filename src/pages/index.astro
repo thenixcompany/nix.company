@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImprintKV from '../components/ImprintKV.astro';
+
+import logoDark from '../images/logo_dark.svg';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Willkommen bei <span class="text-gradient">the nix company</span></h1>
+		<div class="intro-container">
+			<div class="intro-text">
+				<p>
+					Unsere Mission ist es, die Welt zu einem besseren Ort zu machen.
+					Wir sind ein kleines Team, das sich auf die Entwicklung von Software spezialisiert hat und stolz darauf, dass wir unsere Kunden und deren Kunden mit unseren Produkten und Dienstleistungen glücklich machen können.
+				</p>
+				<p>
+					Derzeit arbeiten wir begeistert am <a href="https://pingunauten.de">Pingunauten Trainer</a>, einem VR Spiel das Kindern die Angst vor dem MRT nimmt und zuletzt mit einem XR Science Award prämiert wurde. 
+				</p>
+			</div>
+			<img class="logo" src={logoDark} width="120px" alt="the nix company GmbH Logo"/>
+		</div>
+		<h2>Impressum</h2>
+		<address>
+			<ImprintKV key="Adresse">
+				the nix company GmbH<br>
+				Liebrechtstraße 119<br>
+				47445 Moers<br>
+				Deutschland
+			</ImprintKV>
+
+			<ImprintKV key="Telefon">
+				+49 2841 60 85 84 2
+			</ImprintKV>
+
+			<ImprintKV key="E-Mail">
+				the <em>|at|</em> nix <em>|punkt|</em> company
+			</ImprintKV>
+		</address>
+
+		<section>
+			<ImprintKV key="Registernummer">
+				HRB 33024
+			</ImprintKV>
+			
+			<ImprintKV key="Registergericht">
+				Amtsgericht Duisburg
+			</ImprintKV>
+
+			<ImprintKV key="Umsatzsteuer-Identifikationsnummer">
+				DE331563228
+			</ImprintKV>
+
+			<ImprintKV key="Geschäftsführung">
+				Christopher Kremzow-Tennie<br>
+				Dennis Pohl
+			</ImprintKV>
+
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.text-gradient {
+		background: linear-gradient(90deg, #f6d365 0%, #fda085 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.intro-container {
+		display: grid;
+		grid-auto-flow: dense;
+		grid-gap: 2em;
+		grid-auto-flow: column;
+		align-content: flex-start;
+	}
+
+	.intro-text > * {
+		margin-top: 0;
+	}
+
+	h2 {
+		margin-top: 2em;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.intro-container {
+			grid-auto-flow: row;
+			gap: 0em;
+		}
+	}
+
+</style>

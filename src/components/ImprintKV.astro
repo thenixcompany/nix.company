@@ -1,0 +1,16 @@
+---
+export interface Props {
+	key: string;
+}
+
+const { key } = Astro.props;
+---
+<h6>{key}</h6>
+<slot />
+
+<style>
+	h6 {
+		font-size: medium;
+		margin-bottom: 0.2rem;
+	}
+</style>
